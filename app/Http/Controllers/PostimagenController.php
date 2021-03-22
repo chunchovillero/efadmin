@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Publicidad;
+use App\Postimagen;
 use Illuminate\Http\Request;
 
-class PublicidadController extends Controller
+class PostimagenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PublicidadController extends Controller
      */
     public function index()
     {
-        $publicidades = Publicidad::all();
-        return response()->json($publicidades);
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class PublicidadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Postimagen  $postimagen
      * @return \Illuminate\Http\Response
      */
-    public function show(Publicidad $publicidad)
+    public function show(Postimagen $postimagen)
     {
         //
     }
@@ -53,10 +52,10 @@ class PublicidadController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Postimagen  $postimagen
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publicidad $publicidad)
+    public function edit(Postimagen $postimagen)
     {
         //
     }
@@ -65,10 +64,10 @@ class PublicidadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Postimagen  $postimagen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publicidad $publicidad)
+    public function update(Request $request, Postimagen $postimagen)
     {
         //
     }
@@ -76,10 +75,10 @@ class PublicidadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Postimagen  $postimagen
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publicidad $publicidad)
+    public function destroy(Postimagen $postimagen)
     {
         //
     }

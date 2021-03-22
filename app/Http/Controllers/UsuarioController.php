@@ -52,7 +52,7 @@ class UsuarioController extends Controller
 
     public function showbyfirebaseid($usuario)
     {   
-        $usuariofbid = Usuario::where('firebase_id', '=', $usuario)->get();;
+        $usuariofbid = Usuario::where('firebase_id', '=', $usuario)->first();;
         return response()->json($usuariofbid);
     }
 

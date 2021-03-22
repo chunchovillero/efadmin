@@ -17,7 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['cors']], function () {
 	Route::resource('categorias', 'CategoriaController');
 
 	Route::resource('usuarios', 'UsuarioController');
@@ -26,4 +25,13 @@ Route::group(['middleware' => ['cors']], function () {
 	Route::resource('publicidades', 'PublicidadController');
 
 	Route::resource('publicidadescategorias', 'PublicidadcategoriasController');
-});
+
+	Route::resource('posts', 'PostController');
+	Route::get('postconuser/{postid}', 'PostController@postuser');
+
+
+	Route::resource('comentarios', 'ComentarioController');
+	Route::get('comentarios/postid/{postid}', 'ComentarioController@comentariobypost');
+	Route::get('comentario/{comentario}', 'ComentarioController@comentario');
+	Route::get('comentario/respuestaid/{respuesta}', 'ComentarioController@respuestas');
+	Route::post('comentario/insertar/', 'ComentarioController@insertarcomentario');

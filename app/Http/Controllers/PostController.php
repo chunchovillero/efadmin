@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Publicidad;
+use App\Post;
 use Illuminate\Http\Request;
 
-class PublicidadController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PublicidadController extends Controller
      */
     public function index()
     {
-        $publicidades = Publicidad::all();
-        return response()->json($publicidades);
+        $books = Post::with(['usuario', 'imagenes'])->get();
+        return response()->json($books);
     }
 
     /**
@@ -42,21 +42,27 @@ class PublicidadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Publicidad $publicidad)
+    public function show(Post $post)
     {
         //
+    }
+
+    public function postuser($postid)
+    {
+        $postuser = Post::with('usuario')->where('id', '=', $postid)->first();;
+        return response()->json($postuser);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publicidad $publicidad)
+    public function edit(Post $post)
     {
         //
     }
@@ -65,10 +71,10 @@ class PublicidadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publicidad $publicidad)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -76,10 +82,10 @@ class PublicidadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Publicidad  $publicidad
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publicidad $publicidad)
+    public function destroy(Post $post)
     {
         //
     }
