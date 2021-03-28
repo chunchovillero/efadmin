@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Postimagen;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -54,6 +55,30 @@ class PostController extends Controller
     {
         $postuser = Post::with('usuario')->where('id', '=', $postid)->first();;
         return response()->json($postuser);
+    }
+
+    public function crearpost(Request $request)
+    {
+        $post = Post::create([
+            'texto' => $request->comentario,
+            'usuario_id' => $request->id,
+            'tipopost_id' => $request->tipo
+        ]);
+
+        $cantidadimagenes = count($request->imagenes);
+
+        for ($i=0; $i < $cantidadimagenes; $i++) {
+
+            $guardarimagen = Postimagen::create([
+                'nombre'  => $request->imagenes[$i]['nombre'],
+                'tipo'    => $request->imagenes[$i]['tipo'],
+                'url'     => $request->imagenes[$i]['url'],
+                'post_id' => $post->id
+            ]);
+
+        }
+
+        return response()->json($post);
     }
 
     /**

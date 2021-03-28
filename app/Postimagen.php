@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Postimagen extends Model
 {
-   protected $table = 'postimagenes';
+	protected $fillable = ['nombre', 'tipo', 'url', 'post_id'];
+   	protected $table = 'postimagenes';
 }

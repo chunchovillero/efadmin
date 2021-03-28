@@ -18,15 +18,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 	Route::resource('categorias', 'CategoriaController');
+	Route::resource('notificacionpush', 'NotificacionpushController');
+	Route::post('notificacionpush/enviar', 'NotificacionpushController@enviar');
 
 	Route::resource('usuarios', 'UsuarioController');
 	Route::get('usuario/firebaseid/{firebaseid}', 'UsuarioController@showbyfirebaseid');
+	Route::get('likes/{postid}', 'LikeController@likespost');
+	route::post('likes/crear', 'LikeController@crearlike');
+	route::post('likes/eliminar', 'LikeController@eliminarlike');
 
 	Route::resource('publicidades', 'PublicidadController');
 
 	Route::resource('publicidadescategorias', 'PublicidadcategoriasController');
 
 	Route::resource('posts', 'PostController');
+	Route::post('posts/crear', 'PostController@crearpost');
 	Route::get('postconuser/{postid}', 'PostController@postuser');
 
 
