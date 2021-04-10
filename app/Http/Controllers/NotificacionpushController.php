@@ -28,8 +28,8 @@ class NotificacionpushController extends Controller
         ]);
 
         $body = '{
-            "app_id": "0e5be7b4-f28f-4880-8492-12908a4df11f",
-            "include_player_ids": ["c8d871b0-e2fd-4a5a-8d5c-d00e11772e23"],
+            "app_id": "xxxxxx",
+            "include_player_ids": ["xxxx"],
             "data": {"usuario": "hola"},
             "contents": {"en": "english mensaje", "es": "mensaje en español desde laravel"},
             "headings": {"en": "postman en ingles", "es": "postamn en español"}
