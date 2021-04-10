@@ -18,7 +18,7 @@ class NotificacionpushController extends Controller
 
         $headers = [
             'Content-Type' => 'application/json',
-            'Authorization' => 'Basic M2I2MTc0NzctZTI1Mi00OTEzLWFiMjMtZjI4ZGFiNzU5YTVl'
+            'Authorization' => 'Basic xxx'
         ];
 
         $client = new Client([
@@ -57,7 +57,7 @@ class NotificacionpushController extends Controller
 
         $headers = [
             'Content-Type' => 'application/json',
-            'Authorization' => 'Basic M2I2MTc0NzctZTI1Mi00OTEzLWFiMjMtZjI4ZGFiNzU5YTVl'
+            'Authorization' => 'Basic xxxx'
         ];
 
         $client = new Client([
@@ -67,7 +67,7 @@ class NotificacionpushController extends Controller
         ]);
 
         $body = '{
-            "app_id": "0e5be7b4-f28f-4880-8492-12908a4df11f",
+            "app_id": "xxxxx",
             "include_player_ids": ["'. $request->pushid .'"],
             "data": {"urñ": "'. $request->url .'"},
             "contents": {"en": "'. $request->mensaje .'", "es": "'. $request->mensaje .'"},
